@@ -24,6 +24,8 @@ jobs:
             - ~/.cache
       - run: ls -la cypress
       - run: ls -la cypress/integration
+      - run: ls /root/app/GHomologation
+      - run: ls
       - run:
           name: Running E2E tests
-          command: npx cypress run --project ./root/GHomologation/ --record --key 92a66a43-e49f-4951-aa57-48c3682f5e79
+          command: npx cypress run --record --key 92a66a43-e49f-4951-aa57-48c3682f5e79
