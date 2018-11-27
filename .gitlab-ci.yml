@@ -1,0 +1,29 @@
+# Docker images provided by https://github.com/cypress-io/cypress-docker-images
+
+# first, install Cypress, then run all tests (in parallel)
+stages:
+  - build
+  - test
+
+# this job installs NPM dependencies and Cypress
+install:
+  image: cypress/base:10
+  stage: build
+
+  script:
+    - npm ci
+    - $(npm bin)/cypress verify
+
+# job that run after "install" job finishes
+# NPM dependencies and Cypress binary should be already installed
+cypress-e2e:
+  image: cypress/base:10
+  stage: test
+  script:
+    - $(npm bin)/cypress run --record --key 92a66a43-e49f-4951-aa57-48c3682f5e79
+  artifacts:
+    expire_in: 1 week
+    when: always
+    paths:
+    - cypress/screenshots
+    - cypress/videos
