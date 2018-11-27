@@ -24,7 +24,6 @@ jobs:
             - ~/.cache
       - run: ls -la cypress
       - run: ls -la cypress/integration
-      - run: ls /root/app/GHomologation
       - run: ls
       - run:
           name: Running E2E tests
