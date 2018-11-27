@@ -28,4 +28,4 @@ jobs:
       - run: pwd
       - run:
           name: Running E2E tests
-          command: npx cypress run --spec 'cypress/integration/cases/*.js' --record --key 92a66a43-e49f-4951-aa57-48c3682f5e79
+          command: npx cypress run --record --key 92a66a43-e49f-4951-aa57-48c3682f5e79
