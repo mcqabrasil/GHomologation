@@ -2,11 +2,10 @@ version: 2
 jobs:
   build:
     docker:
-      - image: cypress/base:8
+      - image: cypress/base:10
         environment:
           ## this enables colors in the output
           TERM: xterm
-    working_directory: ~/app
     steps:
       - checkout
       - restore_cache:
@@ -28,4 +27,4 @@ jobs:
       - run: pwd
       - run:
           name: Running E2E tests
-          command: $(npm bin)/cypress run --project ./ --record --key 92a66a43-e49f-4951-aa57-48c3682f5e79
+          command: $(npm bin)/cypress run --record --key 92a66a43-e49f-4951-aa57-48c3682f5e79
