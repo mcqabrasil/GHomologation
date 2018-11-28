@@ -33,4 +33,4 @@ jobs:
       - run: ls -la cypress/integration
       - run:
           name: Running E2E tests
-          command: $(npm bin)/cypress run --project ./root/project --record --key 92a66a43-e49f-4951-aa57-48c3682f5e79
+          command: $(npm bin)/cypress run  --record --key 92a66a43-e49f-4951-aa57-48c3682f5e79
